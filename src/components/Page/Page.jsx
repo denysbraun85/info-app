@@ -13,6 +13,8 @@ const Page = () => {
 
     const onSubmit = value => {
         submitRequest(value);
+        //REMOVE IT AFTER FINISH
+        console.log(value);
     };
 
     return <Fragment>
