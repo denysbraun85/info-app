@@ -11,10 +11,16 @@ const useForecast = () => {
 
     // call the api
     const submitRequest = async location => {
-        //1. get woeid
-        const data = await axios(`${BASE_URL}${location}${API_KEY}`);
-        //2. get wheatherw
-        console.log({data});
+        let data;
+        try {
+            //1. get woeid
+            //2. get wheatherw
+            data = await axios(`${BASE_URL}${location}${API_KEY}`);
+            console.log(data);
+            setIsError(false);
+        } catch(e) {
+            setIsError('There no such location');
+        }
     };
 
     return {
