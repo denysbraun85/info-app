@@ -39,12 +39,20 @@ const useForecast = () => {
     }
 
     const gatherForecastData = (dataDay, dataForecast) => {
-        // const currentDay = getCurrentDayForecast(data);
+
+        const date = new Date();
+
+        const currentDay = getCurrentDayForecast(dataDay, date);
         // const upcomingDaysForecast = getUpcomingDaysForecast(data);
         // const currentDayDetailes = getCurrentDayDetailedForecast(data);
 
         // setForecast({currentDay, upcomingDaysForecast, currentDayDetailes});
         setIsLoading(false);
+
+        console.log(date.toLocaleDateString('en-US', { month: 'long', day: 'numeric' }));
+
+
+
     }
 
     // call the api
